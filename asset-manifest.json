@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ticket-sell-client/static/css/main.851d1e41.css",
+    "main.js": "/ticket-sell-client/static/js/main.b5019a3f.js",
+    "static/js/453.10c29497.chunk.js": "/ticket-sell-client/static/js/453.10c29497.chunk.js",
+    "index.html": "/ticket-sell-client/index.html",
+    "main.851d1e41.css.map": "/ticket-sell-client/static/css/main.851d1e41.css.map",
+    "main.b5019a3f.js.map": "/ticket-sell-client/static/js/main.b5019a3f.js.map",
+    "453.10c29497.chunk.js.map": "/ticket-sell-client/static/js/453.10c29497.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.851d1e41.css",
+    "static/js/main.b5019a3f.js"
+  ]
+}
