@@ -1,0 +1,65 @@
+/* src/SeatSelection.css */
+
+.seat-selection-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.username-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 16px;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* Adjust columns for layout */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.seat.selected {
+    background-color: #4caf50;
+    /* Green for selected */
+}
+
+.seat.reserved {
+    background-color: #f44336;
+    /* Red for reserved */
+    cursor: not-allowed;
+    /* Disable pointer */
+}
+
+.purchase-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    /* Primary button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+.purchase-button:disabled {
+    background-color: #ccc;
+    /* Disabled button color */
+}
