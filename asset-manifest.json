@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/ticket-sell-client/static/css/main.851d1e41.css",
-    "main.js": "/ticket-sell-client/static/js/main.b5019a3f.js",
+    "main.css": "/ticket-sell-client/static/css/main.d5eaf15c.css",
+    "main.js": "/ticket-sell-client/static/js/main.1b9339e7.js",
     "static/js/453.10c29497.chunk.js": "/ticket-sell-client/static/js/453.10c29497.chunk.js",
+    "static/media/b-nazanin.ttf": "/ticket-sell-client/static/media/b-nazanin.d7478a9ecad2d8496d98.ttf",
+    "static/media/b-lotus.ttf": "/ticket-sell-client/static/media/b-lotus.2b00479324888c7c1eb1.ttf",
     "index.html": "/ticket-sell-client/index.html",
-    "main.851d1e41.css.map": "/ticket-sell-client/static/css/main.851d1e41.css.map",
-    "main.b5019a3f.js.map": "/ticket-sell-client/static/js/main.b5019a3f.js.map",
+    "main.d5eaf15c.css.map": "/ticket-sell-client/static/css/main.d5eaf15c.css.map",
+    "main.1b9339e7.js.map": "/ticket-sell-client/static/js/main.1b9339e7.js.map",
     "453.10c29497.chunk.js.map": "/ticket-sell-client/static/js/453.10c29497.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.851d1e41.css",
-    "static/js/main.b5019a3f.js"
+    "static/css/main.d5eaf15c.css",
+    "static/js/main.1b9339e7.js"
   ]
 }
