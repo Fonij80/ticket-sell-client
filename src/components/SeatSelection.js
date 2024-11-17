@@ -27,10 +27,10 @@ const SeatSelection = () => {
 
     return (
         <div className="seat-selection-container">
-            <h2>Choose Your Seats</h2>
+            <p>صندلی‌های خود را انتخاب کنید</p>
             <input
                 type="text"
-                placeholder="Enter your name"
+                placeholder="نام کامل خود را وارد کنید"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="username-input"
@@ -47,7 +47,7 @@ const SeatSelection = () => {
                     </button>
                 ))}
             </div>
-            <button onClick={handlePurchase} disabled={selectedSeats.length === 0} className="purchase-button">Buy Tickets</button>
+            <button onClick={handlePurchase} disabled={selectedSeats.length === 0} className="purchase-button">خرید بلیت</button>
         </div>
     );
 };

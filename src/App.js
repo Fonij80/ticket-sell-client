@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Concert Ticket Booking</h1>
+        <h1>فروش بلیت کنسرت</h1>
         <SeatSelection />
       </header>
     </div>
