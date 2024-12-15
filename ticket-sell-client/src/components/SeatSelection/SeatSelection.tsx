@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SeatSelection.css';
 import axios from 'axios';
+import { FaChair } from 'react-icons/fa'; // Import chair icon
 
 interface Seat {
     id: number;
@@ -17,7 +18,7 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ totalSeats, pricePerSeat 
     const mockSeats: Seat[] = Array.from({ length: totalSeats }, (_, index) => ({
         id: index + 1,
         price: pricePerSeat,
-        reserved: Math.random() < 0.3
+        reserved: Math.random() < 0.3 // Randomly reserve about 30% of seats
     }));
 
     const [seats, setSeats] = useState<Seat[]>(mockSeats);
@@ -60,25 +61,24 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ totalSeats, pricePerSeat 
 
     return (
         <div className="seat-selection-container">
-            <p>صندلی‌های خود را انتخاب کنید</p>
+            <h2>صندلی‌های خود را انتخاب کنید</h2>
             <input
                 type="text"
-                placeholder="نام کاربری خود را وارد کنید"
+                placeholder="نام کامل خود را وارد کنید"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="username-input"
             />
             <div className="seats">
                 {seats.map(seat => (
-                    <button
-                        key={seat.id}
-                        className={`seat ${seat.reserved ? 'reserved' : selectedSeats.includes(seat.id) ? 'selected' : ''}`}
-                        onClick={() => !seat.reserved && toggleSeat(seat.id)}
-                        disabled={seat.reserved}
-                        title={`قیمت: ${seat.price} تومان`}
-                    >
-                        {seat.id}
-                    </button>
+                    <div key={seat.id} className={`seat ${seat.reserved ? 'reserved' : selectedSeats.includes(seat.id) ? 'selected' : ''}`}>
+                        <FaChair
+                            className={`seat-icon ${seat.reserved ? 'reserved' : ''}`}
+                            onClick={() => !seat.reserved && toggleSeat(seat.id)}
+                            title={`قیمت: ${seat.price} تومان`}
+                        />
+                        <span className="seat-number">{seat.id}</span>
+                    </div>
                 ))}
             </div>
             <div className="total-price">

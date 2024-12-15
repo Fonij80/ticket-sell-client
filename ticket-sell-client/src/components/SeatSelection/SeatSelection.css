@@ -1,5 +1,22 @@
 .seat-selection-container {
     text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.username-input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: right;
 }
 
 .seats {
@@ -9,22 +26,51 @@
 }
 
 .seat {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    /* Stack icon and number */
+    align-items: center;
+    /* Center align items */
+    justify-content: center;
+    /* Center align items */
+    width: 60px;
+    /* Adjust size */
+    height: 60px;
+    /* Adjust size */
+    margin: 10px;
+    /* Space between seats */
     background-color: #28a745;
+    /* Available seat color */
     color: white;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.seat:hover {
+    background-color: #218838;
+    /* Darker green on hover */
 }
 
 .seat.reserved {
     background-color: #dc3545;
+    /* Reserved seat color */
 }
 
 .seat.selected {
     background-color: #ffc107;
+    /* Selected seat color */
+}
+
+.seat-icon {
+    font-size: 24px;
+    /* Icon size */
+}
+
+.seat-number {
+    margin-top: 5px;
+    /* Space between icon and number */
 }
 
 .total-price {
@@ -34,4 +80,16 @@
 .purchase-button {
     margin-top: 20px;
     padding: 10px 20px;
+    font-size: 16px;
+    /* Larger font for button */
+    border-radius: 5px;
+    background-color: #007bff;
+    /* Primary button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background-color: #0056b3;
 }
