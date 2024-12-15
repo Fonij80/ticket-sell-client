@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SeatSelection.css';
 import axios from 'axios';
-import { FaChair } from 'react-icons/fa'; // Import chair icon
+import { FaChair } from 'react-icons/fa';
 
 interface Seat {
     id: number;
@@ -10,16 +10,15 @@ interface Seat {
 }
 
 interface Row {
-    seatsCount: number; // Number of seats in this row
-    price: number; // Price of each seat in this row
+    seatsCount: number;
+    price: number;
 }
 
 interface SeatSelectionProps {
-    rows: Row[]; // List of rows with seat counts and prices
+    rows: Row[];
 }
 
 const SeatSelection: React.FC<SeatSelectionProps> = ({ rows }) => {
-    // Generate seats based on rows prop
     const mockSeats: Seat[] = [];
     let seatId = 1;
 
@@ -28,12 +27,12 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ rows }) => {
             mockSeats.push({
                 id: seatId++,
                 price: row.price,
-                reserved: Math.random() < 0.3 // Randomly reserve about 30% of seats
+                reserved: Math.random() < 0.3
             });
         }
     });
 
-    const [seats, setSeats] = useState<Seat[]>(mockSeats);
+    const [seats] = useState<Seat[]>(mockSeats);
     const [selectedSeats, setSelectedSeats] = useState<number[]>([]);
     const [username, setUsername] = useState<string>('');
 
