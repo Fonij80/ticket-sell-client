@@ -9,17 +9,29 @@ interface Seat {
     reserved: boolean;
 }
 
-interface SeatSelectionProps {
-    totalSeats: number;
-    pricePerSeat: number;
+interface Row {
+    seatsCount: number; // Number of seats in this row
+    price: number; // Price of each seat in this row
 }
 
-const SeatSelection: React.FC<SeatSelectionProps> = ({ totalSeats, pricePerSeat }) => {
-    const mockSeats: Seat[] = Array.from({ length: totalSeats }, (_, index) => ({
-        id: index + 1,
-        price: pricePerSeat,
-        reserved: Math.random() < 0.3 // Randomly reserve about 30% of seats
-    }));
+interface SeatSelectionProps {
+    rows: Row[]; // List of rows with seat counts and prices
+}
+
+const SeatSelection: React.FC<SeatSelectionProps> = ({ rows }) => {
+    // Generate seats based on rows prop
+    const mockSeats: Seat[] = [];
+    let seatId = 1;
+
+    rows.forEach((row) => {
+        for (let i = 0; i < row.seatsCount; i++) {
+            mockSeats.push({
+                id: seatId++,
+                price: row.price,
+                reserved: Math.random() < 0.3 // Randomly reserve about 30% of seats
+            });
+        }
+    });
 
     const [seats, setSeats] = useState<Seat[]>(mockSeats);
     const [selectedSeats, setSelectedSeats] = useState<number[]>([]);
@@ -33,7 +45,10 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ totalSeats, pricePerSeat 
         }
     };
 
-    const totalPrice = selectedSeats.length * pricePerSeat;
+    const totalPrice = selectedSeats.reduce((total, seatId) => {
+        const seat = seats.find(s => s.id === seatId);
+        return total + (seat ? seat.price : 0);
+    }, 0);
 
     const handlePurchase = async () => {
         if (selectedSeats.length === 0) {

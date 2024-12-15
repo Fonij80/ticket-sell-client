@@ -1,10 +1,11 @@
 import './App.css'
 import SeatSelection from './components/SeatSelection/SeatSelection';
+import seatData from './seatData.json';
 
 function App() {
   return (
     <>
-      <SeatSelection totalSeats={300} pricePerSeat={1000} />
+      <SeatSelection rows={seatData} />
     </>
   )
 }

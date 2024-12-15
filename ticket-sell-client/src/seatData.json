@@ -1,0 +1,14 @@
+[
+    {
+        "seatsCount": 10,
+        "price": 10000
+    },
+    {
+        "seatsCount": 15,
+        "price": 15000
+    },
+    {
+        "seatsCount": 20,
+        "price": 20000
+    }
+]
