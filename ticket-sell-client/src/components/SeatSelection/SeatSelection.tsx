@@ -27,7 +27,7 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ rows }) => {
             mockSeats.push({
                 id: seatId++,
                 price: row.price,
-                reserved: Math.random() < 0.3
+                reserved: Math.random() < 0.3 // Randomly reserve about 30% of seats
             });
         }
     });
@@ -85,11 +85,14 @@ const SeatSelection: React.FC<SeatSelectionProps> = ({ rows }) => {
             />
             <div className="seats">
                 {seats.map(seat => (
-                    <div key={seat.id} className={`seat ${seat.reserved ? 'reserved' : selectedSeats.includes(seat.id) ? 'selected' : ''}`}>
+                    <div
+                        key={seat.id}
+                        className={`seat ${seat.reserved ? 'reserved' : selectedSeats.includes(seat.id) ? 'selected' : ''}`}
+                        onClick={() => !seat.reserved && toggleSeat(seat.id)}
+                        title={`قیمت: ${seat.price} تومان`}
+                    >
                         <FaChair
                             className={`seat-icon ${seat.reserved ? 'reserved' : ''}`}
-                            onClick={() => !seat.reserved && toggleSeat(seat.id)}
-                            title={`قیمت: ${seat.price} تومان`}
                         />
                         <span className="seat-number">{seat.id}</span>
                     </div>
